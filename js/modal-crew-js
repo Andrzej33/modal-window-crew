@@ -2,6 +2,7 @@
 const btn = document.getElementById("crewShowBtn");
 const crew = document.getElementById("ourCrew");
 const btnClose = document.getElementById("crewModalClose");
+const box = document.querySelector(".box");
 // const contentModal = document.querySelector('.modal-content');
 
 const showMembers = () => {
@@ -10,17 +11,20 @@ const showMembers = () => {
 }
 
 const closeModalCrew = (e) => {
-    console.log(e.target);
-    console.log(e.currentTarget);
-    // (event.target.nodeName !== "BUTTON")
-    if (e.target === e.currentTarget) {
-        crew.style.display = "none"
-    }
+    
+     if (e.target === e.currentTarget) {
+    crew.style.display = "none";
+     }
 }
 
-crew.addEventListener('click',closeModalCrew)
+const onBtnCloseModal = (event) => {
+    console.log(event);
+    crew.style.display = "none"
+}
 
-btnClose.addEventListener('click', closeModalCrew);
+box.addEventListener('click',closeModalCrew)
+
+btnClose.addEventListener('click', onBtnCloseModal);
 
 btn.addEventListener('click', showMembers);
 

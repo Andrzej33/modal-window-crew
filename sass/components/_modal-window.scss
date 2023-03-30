@@ -43,27 +43,7 @@
 
 
 
-.modal-bt {
-    background-color: inherit;
-    display: flex;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    position: absolute;
-    right: 8px;
-    top: 8px;
-}
 
-.modal-close {
-    fill: currentColor;
-    .modal-bt:focus &,
-        .modal-bt:hover & {
-            color: var(--accent-color);
-        }
-}
 
 // .modal-bt:focus .modal-close,
 // .modal-bt:hover .modal-close {
