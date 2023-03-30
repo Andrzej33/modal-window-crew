@@ -1,0 +1,36 @@
+
+const btn = document.getElementById("crewShowBtn");
+const crew = document.getElementById("ourCrew");
+const btnClose = document.getElementById("crewModalClose");
+// const contentModal = document.querySelector('.modal-content');
+
+const showMembers = () => {
+    crew.style.display = "block"
+    
+}
+
+const closeModalCrew = (e) => {
+    console.log(e.target);
+    console.log(e.currentTarget);
+    // (event.target.nodeName !== "BUTTON")
+    if (e.target === e.currentTarget) {
+        crew.style.display = "none"
+    }
+}
+
+crew.addEventListener('click',closeModalCrew)
+
+btnClose.addEventListener('click', closeModalCrew);
+
+btn.addEventListener('click', showMembers);
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == crew) {
+//     modal.style.display = "none";
+//   }
+//     console.log(event.currentTarget);
+//     console.log(contentModal);
+// }

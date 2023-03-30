@@ -66,23 +66,6 @@ address {
   text-decoration: none;
 }
 
-body {
-  font-family: var(--main-font-style), sans-serif;
-  color: var(--primary-text-color);
-  margin: 0;
-}
-
-button {
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 .is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -118,6 +101,28 @@ img {
 }
 @media screen and (min-width: 1200px) {
   .container {
+    width: 1200px;
+  }
+}
+
+.modal-container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .modal-container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal-container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal-container {
     width: 1200px;
   }
 }
@@ -466,13 +471,6 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-.form-coment:-ms-input-placeholder {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
 .form-coment::placeholder {
   font-weight: 400;
   font-size: 12px;
@@ -572,7 +570,6 @@ position: absolute;
 }
 
 .contract-modal {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   text-decoration: none;
@@ -604,6 +601,37 @@ position: absolute;
   .contract-modal::after {
     bottom: 5px;
   }
+}
+
+.crew-container {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(219, 198, 198);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
 }
 
 .header {
@@ -655,7 +683,7 @@ position: absolute;
 }
 @media screen and (min-width: 768px) {
   .site-nav,
-.contacts {
+  .contacts {
     display: flex;
   }
 }
@@ -730,14 +758,14 @@ position: absolute;
 }
 @media screen and (min-width: 768px) {
   .contacts__mail,
-.contacts__tel {
+  .contacts__tel {
     display: flex;
     padding: 0px;
   }
 }
 @media screen and (min-width: 1200px) {
   .contacts__mail,
-.contacts__tel {
+  .contacts__tel {
     font-size: 14px;
     line-height: 1.14;
   }
@@ -751,7 +779,7 @@ position: absolute;
 }
 @media screen and (min-width: 768px) {
   .contacts__envelop,
-.contacts__smartphone {
+  .contacts__smartphone {
     display: block;
   }
 }
@@ -1169,7 +1197,7 @@ position: absolute;
 }
 @media screen and (max-width: 1199px) {
   .social__text,
-.subs-text {
+  .subs-text {
     text-align: center;
   }
 }
@@ -1244,9 +1272,6 @@ position: absolute;
   transition: transform var(--transition-duration) var(--transition-cub);
 }
 .footer-input:not(:-moz-placeholder-shown) ~ .footer-mail-label {
-  transform: translateY(-43px);
-}
-.footer-input:not(:-ms-input-placeholder) ~ .footer-mail-label {
   transform: translateY(-43px);
 }
 .footer-input:focus ~ .footer-mail-label, .footer-input:not(:placeholder-shown) ~ .footer-mail-label {
